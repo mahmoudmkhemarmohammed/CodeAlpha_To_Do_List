@@ -1,0 +1,144 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Layout */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #A0D8F1, #B2DFDB);  /* Soft gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+    overflow: hidden;
+}
+
+.todo-container {
+    background: #ffffff;  /* White container */
+    border-radius: 15px;
+    padding: 40px;
+    width: 500px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.todo-header {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 2px solid #A0D8F1;
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: #f9f9f9;
+}
+
+.todo-icon {
+    color: #00796B; /* Teal icon */
+    margin-right: 10px;
+}
+
+.todo-input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+.todo-btn {
+    width: 100%;
+    padding: 14px;
+    background: #00796B;  /* Teal background */
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-btn:hover {
+    background: #004D40;  /* Dark teal on hover */
+    box-shadow: 0 5px 15px rgba(0, 121, 107, 0.3);
+}
+
+.todo-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.todo-item {
+    background: #f9f9f9;  /* Light grey background for tasks */
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transform: scale(0); /* Initial scale for animation */
+    animation: slideIn 0.3s forwards; /* Slide-in animation */
+}
+
+.todo-item:hover {
+    transform: translateY(-5px);  /* Lift effect on hover */
+}
+
+.todo-item span {
+    flex: 1;
+    font-size: 18px;
+    color: #333;
+}
+
+.todo-item button {
+    background: none;
+    border: none;
+    color: #00796B;  /* Teal color for button */
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.todo-item button:hover {
+    color: #004D40;  /* Dark teal on hover */
+}
+
+.todo-item.completed span {
+    text-decoration: line-through;
+    color: #B0BEC5;  /* Grey color for completed tasks */
+}
+
+@keyframes slideIn {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Error message style */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
+}
